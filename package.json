@@ -1,0 +1,17 @@
+{
+  "name": "chat-react",
+  "version": "1.0.0",
+  "description": "chat-react-monorepo",
+  "author": "jinwoo1004",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "client": "yarn workspace client",
+    "server": "yarn workspace server",
+    "start": "cd client && $npm_execpath run build && cd .. && cd server && $npm_execpath start"
+  }
+}

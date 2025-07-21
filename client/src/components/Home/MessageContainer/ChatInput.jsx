@@ -1,0 +1,49 @@
+import { useEffect, useRef, useState } from 'react';
+import { IoIosSend } from 'react-icons/io';
+
+import useSendMessage from '@hooks/useSendMessage';
+
+const ChatInput = ({ currentRoom }) => {
+  const { isLoading, sendMessage } = useSendMessage();
+  const [message, setMessage] = useState('');
+  const inputRef = useRef();
+
+  useEffect(() => {
+    setMessage('');
+    inputRef.current.focus();
+  }, [currentRoom]);
+
+  return (
+    <form
+      className="relative w-full"
+      onSubmit={async e => {
+        e.preventDefault();
+        await sendMessage(message);
+        setMessage('');
+      }}
+    >
+      <input
+        name="message"
+        type="text"
+        className="input w-full bg-gray-100 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 disabled:cursor-default disabled:bg-gray-200"
+        value={message}
+        onChange={e => setMessage(e.target.value)}
+        ref={inputRef}
+        autoComplete="off"
+      />
+      <button
+        className="absolute inset-y-0 end-0 mx-4 my-2 flex items-center text-black disabled:hidden"
+        type="submit"
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <span className="loading loading-spinner bg-gray-400" />
+        ) : (
+          <IoIosSend size={30} />
+        )}
+      </button>
+    </form>
+  );
+};
+
+export default ChatInput;
