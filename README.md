@@ -49,21 +49,6 @@ Socket.IO를 활용해 실시간으로 채팅을 주고 받을 수 있습니다.
 
 <br><br>
 
-### ◽ 렌더링 최적화
-
-- 전역 상태관리(`Zustand`)를 통해 **불필요한 렌더링을 최소화**했습니다.
-- 컴포넌트 렌더링 상태를 시각적으로 확인할 수 있는 gif를 아래에 첨부하였습니다. (with. **React Developer Tools**) 
-
-| 메뉴 및 채팅방 렌더링 | 실시간 채팅 / 알림 시 렌더링 |
-| --- | --- |
-| <img src="https://raw.githubusercontent.com/jinwoo1004/react-chat/master/test/%EB%9E%9C%EB%8D%94%EB%A7%81%EC%B5%9C%EC%86%8C%ED%85%8C%EC%8A%A4%ED%8A%B8.gif" alt="렌더링 최적화"> | <img src="https://raw.githubusercontent.com/jinwoo1004/react-chat/master/test/%EB%9E%9C%EB%8D%94%EB%A7%81%EC%B5%9C%EC%86%8C%ED%85%8C%EC%8A%A4%ED%8A%B8.gif" alt="렌더링 최적화 - 실시간 채팅"> |
-
-
-
-<br><br>
-
-
-
 ## 🔸 기술스택
 
 |  | 기술 |
